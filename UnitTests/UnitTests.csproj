@@ -49,11 +49,35 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="InfrastructureLayer\VO\EmployeeVO2Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjectLayer\BusinessObjectLayer.csproj">
+      <Project>{542681cd-5c9b-43cf-b553-e769f58fd41e}</Project>
+      <Name>BusinessObjectLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{3d5b5c9a-3258-4fc4-951e-96ac650e9eed}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeTraining\PresentationLayer.csproj">
+      <Project>{e7cf05a8-54eb-4e41-bd9e-4763584dd55f}</Project>
+      <Name>PresentationLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfrastructureLayer\InfrastructureLayer.csproj">
+      <Project>{f46c7859-eb8c-4461-af89-a05534192457}</Project>
+      <Name>InfrastructureLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessObjectLayer\" />
+    <Folder Include="DataAccessLayer\" />
+    <Folder Include="InfrastructureLayer\Common\" />
+    <Folder Include="PresentationLayer\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
