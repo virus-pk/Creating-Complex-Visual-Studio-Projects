@@ -46,5 +46,22 @@ namespace DataAccessLayer.DAO
 
             return vo;
         }
+
+        public void DeleteEmployee(int id)
+        {
+            try
+            {
+                using (var db = new EmployeeTrainingModelContainer())
+                {
+                    Employee employee = (Employee)db.Employees.Where(b => b.Id == id).First();
+                    db.Employees.Remove(employee);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+            }
+        }
     }
 }
